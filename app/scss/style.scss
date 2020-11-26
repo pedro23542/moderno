@@ -182,6 +182,7 @@
   &-author{
     display: flex;
     align-items: center;
+    max-width: 245px;
     .avatar{
       width: 30px;
       height: 30px;
@@ -196,6 +197,12 @@
       font-size: 14px;
       font-weight: 500;
     } 
+  }
+  &-star{
+    font-size: 12px;
+    span{
+      color: #000;
+    }
   }
 }
 .products__bottom-btn{
@@ -212,7 +219,33 @@
   }
 }  
 
-
-
-
 // END PRODUCTS
+
+// START PRODICTS-SLIDER
+.product-slider{
+  padding: 110px 0px 120px; 
+  .slick-dots{
+    text-align: center;
+    margin-top: 50px;
+    li{
+      display: inline-block;
+      margin-right: 3px;
+      margin-left: 3px;
+      &.slick-active{     // ***************************************************************************************
+        button{
+          background-color: $green;
+        }
+      }
+      button {
+        border-radius: 50%;
+        background-color: rgb(233,233,233);
+        border: none;
+        font-size: 0;
+        width: 16px;
+        height: 16px;
+        outline: none;
+        cursor: pointer;
+      }
+    }
+  }
+}
