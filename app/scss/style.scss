@@ -4,6 +4,9 @@
 @import 'fonts.scss';
 
 // START HEADER
+.header{
+  background-color: #fff;
+}
 .header__top-inner {
   display: flex;
   justify-content: space-between;
@@ -98,6 +101,7 @@
   }
 }
 .basket{
+  margin-right: 20px;
   span{
     background-color: $green;
   }
@@ -113,7 +117,6 @@
 }
 
 .user{
-  margin-left: 20px;
   margin-right: 25px;
   padding-right: 20px;
   position: relative;
@@ -170,6 +173,7 @@
 .circle__menu{
   position: absolute;
   top: 69px;
+  z-index: 1;
 }
 .user__box,
 .basket__box,
@@ -296,6 +300,10 @@
 }
 .icons-color::before{
   color: $tomato;
+}
+.header__btn-menu,
+.menu__btn{
+  display: none;
 }
 // END HEADER
 
@@ -755,3 +763,6 @@
   }
 }
 //END FOOTER
+
+@import 'media.scss';
+

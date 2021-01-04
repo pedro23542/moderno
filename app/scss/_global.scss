@@ -25,6 +25,13 @@ body{
   font-size: 15px;
   line-height: 25px;
   color: $text;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+footer{
+  margin-top: auto;
 }
 .container{
   max-width: 1200px;
