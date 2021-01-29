@@ -26,6 +26,8 @@ $(function(){
   });
 });
 
+$('input[type="file"], select').styler();
+
 //tabs
 $('.product-one__tabs .tab, settings__tabs .tab').on('click', function(event) {
   let id = $(this).attr('data-id');
