@@ -37,6 +37,7 @@ footer{
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 15px;
+  
 }
 //startup settings
 
@@ -76,4 +77,7 @@ footer{
     font-size: 14px;
     font-family: 'icomoon';
   }
+}
+#modal{
+  display: none;
 }

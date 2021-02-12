@@ -554,6 +554,13 @@
 .products {
   padding: 110px 0;
   background-color: $grey;
+  max-width: 1920px;
+  width: 100%;
+  margin: 0 auto; 
+}
+.product-slider__wrapper{
+  max-width: 1920px;
+  margin: 0 auto; 
 }
 
 .products__inner-btn {
@@ -575,10 +582,14 @@
 
 .products__inner-box {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
+  margin-left: -30px;      //  выравнивание************************************************************************************************************
   flex-wrap: wrap;
 }
-
+.products .product__item{
+  flex-basis: calc(25% - 30px);
+  margin-left: 30px;
+}
 .product__item {
   max-width: 442px;
   width: 100%;
@@ -778,10 +789,13 @@
 
   &__info {
     background-color: #8bc34a;
-    padding: 55px 75px;
+    max-width: 680px;
+    width: 100%;
+    padding: 55px 0px;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    justify-content: center;
 
     &-text {
       font-size: 30px;
@@ -1068,7 +1082,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 16px 0;
+  padding: 16px;
 }
 
 .product-one__images {
@@ -1260,18 +1274,18 @@
 }
 
 .tab-item__list {
-  min-width: 550px;
-  width: 550px;
-  max-height: 200px;
+  // min-width: 550px;
+  // width: 550px;
+  // max-height: 200px;
   line-height: 36px;
   font-size: 16px;
   color: #707070;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  // max-width: 550px;
-  // column-count: 2;
-  // column-gap: 25px;
+  // display: flex;
+  // flex-direction: column;
+  // flex-wrap: wrap;
+  max-width: 550px;
+  column-count: 2;
+  column-gap: 25px;
 }
 
 .aside__item {
@@ -1746,7 +1760,7 @@
   }
 
   input {
-    min-width: 540px;
+    max-width: 540px;
     width: 100%;
     height: 40px;
     background-color: #f9f9f9;
@@ -2026,9 +2040,6 @@
     span {
       color: $green;
     }
-    &::placeholder{
-      color: #707070;
-    }
   }
 
   select,
@@ -2040,6 +2051,9 @@
     height: 40px;
     background-color: #f9f9f9;
     padding: 0 18px;
+    &::placeholder{
+      color: #707070;
+    }
   }
   textarea{
     resize: none;
@@ -2121,5 +2135,132 @@
 }
 
 //END UPLOAD
+
+// START WITHDRAWALS
+.withdrawals__inner{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 110px;
+}
+.withdrawals__col{
+  max-width: 570px;
+  width: 100%;
+  background-color: #fff;
+  border: 1px solid #dedede;
+  height: 100%;                     // *******************высота расчитывается относительно занемаемого контента у flex эллементов
+}
+.withdrawals__title{
+  padding: 18px 32px 24px;
+  border-bottom: 1px solid #dedede;
+  margin-bottom: 30px;
+  color: $bg;
+  @include f500;
+  font-size: 24px;
+}
+.withdrawals__content{
+  padding-left: 40px;
+  padding-right: 40px; 
+  button{
+    margin-bottom: 50px;
+    color: #ffffff;
+    background-color: $green;
+    border: none;
+    padding: 15px 36px;
+    cursor: pointer;
+  }
+}
+.withdrawals__form-line{
+  margin-bottom: 25px;
+  label{
+    display: block;
+    width: 100%;
+    font-size: 16px;
+    @include f500;
+    margin-bottom: 15px;
+    color: $bg;
+    span{
+      color: $green;
+    }
+  }
+  input,
+  select{
+    width: 100%;
+    display: block;
+    border: 1px solid #d7d7d7;
+    height: 40px;
+    background-color: #f9f9f9;
+    padding: 18px;
+    &::placeholder{
+      color: #707070;        // **************************************цвет текста по умолчанию в нутри инпута
+    }
+  }
+  .jq-selectbox{
+    width: 100%;
+  }
+  .jq-selectbox__select{
+    height: 40px;
+    padding: 0 18px;
+    border: 1px solid #d7d7d7;
+    border-radius: 0px;
+    background: #f9f9f9;
+    box-shadow: none;
+    font-family: 'Roboto-Regular', sans-serif;
+    color: #707070;
+    text-shadow: none;
+    line-height: 40px;         //****************************************************************************
+  }
+  .jq-selectbox__trigger-arrow{
+    border: none;
+    top: 0;
+    right: 20px;
+    line-height: 40px;
+    font-size: 15px;
+    &::before{
+      font-family: 'icomoon';
+      content: '\f0d7';
+    }
+  }
+  .jq-selectbox__trigger{
+    border-left: none;
+  }
+}
+.withdrawals__content-items{
+  padding-bottom: 35px;
+}
+.withdrawals__content-item{
+  display: flex;
+  height: 42px;
+  align-items: center;
+  font-size: 13px;
+  color: #444444;
+  &:nth-child(odd){
+    background-color: #f9f9f9;
+  }
+}
+.withdrawals__content-date{
+  width: 154px;
+  padding-left: 20px;
+  @include f500;
+}
+.withdrawals__content-email{
+  width: 180px;
+  @include f500;
+}
+.withdrawals__content-price{
+  width: 70px;
+  @include f700;
+}
+.withdrawals__content-status{
+  width: 88px;
+  @include f700;
+  &.withdrawals__content-pending{
+
+  }
+  &.withdrawals__content-paid{
+    color: $green;
+  }
+}
+
+// END WITHDRAWALS
 
 @import 'media.scss';
